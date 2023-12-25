@@ -1,0 +1,13 @@
+[Unit]
+Description=Brother scan-key-tool
+
+[Service]
+User=yacine
+Type=forking
+ExecStart=/opt/brother/scanner/brscan-skey/brscan-skey
+ExecStop=/opt/brother/scanner/brscan-skey/brscan-skey --terminate
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
