@@ -6,3 +6,6 @@ These scripts are based on https://download.brother.com/welcome/dlf006652/brscan
 Service file should be placed in /etc/systemd/system then:
 sudo systemctl enable brscan-skey.service
 sudo systemctl start brscan-skey.service
+
+Dependencies:
+ghostscript, libtiff-tools
