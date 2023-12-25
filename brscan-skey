@@ -1,0 +1,32 @@
+#! /bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+  if [ "$2" = "2" ];then
+    echo '   no option                :register all MFCs'
+    echo '   -t (--terminate)         :terminate this tool'
+    echo '   -a (--add MFC)           :register the specified MFC'
+    echo '   -d (--delete) MFC        :exclude the specified MFC'
+    echo '   -p (--passwd) PASSWORD   :set the password'
+    echo '   -u (--username) USERNAMR :set the user name'
+    echo '   -l (--list)              :list the available MFCs'
+    echo '   -m (--mailto)            :mail address (scan to e-mail)'  
+    echo '   --refresh                :refresh setting'
+    echo '   --diagnosis              :print diagnosis data'
+    echo '   -h --help                :help'
+  fi
+  #echo '   Copyright 2007-2018 Brother Industries, Ltd'
+  exit 0
+fi
+
+if [ "$1" = "-l" ] || [ "$1" = "--list" ]; then
+	/opt/brother/scanner/brscan-skey/brscan-skey-exe $*
+	exit 0
+fi
+
+
+if [ "$1" = "-f" ];then
+	/opt/brother/scanner/brscan-skey/brscan-skey-exe $*
+else
+	/opt/brother/scanner/brscan-skey/brscan-skey-exe $*&
+fi
+
